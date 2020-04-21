@@ -12,6 +12,16 @@
             "nsapi.default-wifi-ssid"                   : "\"SSID\"",
             "nsapi.default-wifi-password"               : "\"Password\""
         },
+        "NUMAKER_IOT_M487": {
+            "target.network-default-interface-type" : "WIFI",
+            "esp8266.tx"                            : "PH_8",
+            "esp8266.rx"                            : "PH_9",
+            "esp8266.rts"                           : "A2",
+            "esp8266.cts"                           : "A3",
+            "esp8266.rst"                           : "PH_3",
+            "esp8266.provide-default"               : true,
+            "target.macros_add"                     : ["MBEDTLS_ENTROPY_HARDWARE_ALT"]
+        },
         "RZ_A1H": {
             "target.macros_add"                         : ["MBEDTLS_TEST_NULL_ENTROPY", "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"],
             "target.network-default-interface-type"     : "ETHERNET"
