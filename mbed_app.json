@@ -12,6 +12,10 @@
             "nsapi.default-wifi-ssid"                   : "\"SSID\"",
             "nsapi.default-wifi-password"               : "\"Password\""
         },
+        "NUMAKER_PFM_M487": {
+            "target.network-default-interface-type" : "ETHERNET",
+            "target.macros_add"                     : ["MBEDTLS_ENTROPY_HARDWARE_ALT"]
+        },        
         "NUMAKER_IOT_M487": {
             "target.network-default-interface-type" : "WIFI",
             "esp8266.tx"                            : "PH_8",
