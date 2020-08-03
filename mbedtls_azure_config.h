@@ -19,35 +19,6 @@
 #ifndef AZURE_MBEDTLS_CONFIG_H
 #define AZURE_MBEDTLS_CONFIG_H
 
-#if 1 // refer to AWS TLS config
-
-#if !defined(MBEDTLS_ENTROPY_HARDWARE_ALT) && \
-    !defined(MBEDTLS_ENTROPY_NV_SEED) && !defined(MBEDTLS_TEST_NULL_ENTROPY)
-#error "This hardware does not have an entropy source."
-#endif /* !MBEDTLS_ENTROPY_HARDWARE_ALT && !MBEDTLS_ENTROPY_NV_SEED &&
-        * !MBEDTLS_TEST_NULL_ENTROPY */
-
-#if !defined(MBEDTLS_SHA1_C)
-#define MBEDTLS_SHA1_C
-#endif /* !MBEDTLS_SHA1_C */
-
-/*
- *  This value is sufficient for handling 2048 bit RSA keys.
- *
- *  Set this value higher to enable handling larger keys, but be aware that this
- *  will increase the stack usage.
- */
-#define MBEDTLS_MPI_MAX_SIZE        256
-
-#define MBEDTLS_MPI_WINDOW_SIZE     1
-
-#if defined(TARGET_STM32F439xI) && defined(MBEDTLS_CONFIG_HW_SUPPORT)
-#undef MBEDTLS_AES_ALT
-#endif /* TARGET_STM32F439xI && MBEDTLS_CONFIG_HW_SUPPORT */
-
-
-#else // refer to AWS TLS config
-
 /*! Size optimized TLS config to connect to Azure IoT Hub using RSA X.509 Certificates */
 
 /* Platform has time function to provide time for certificates verifications */
@@ -254,8 +225,5 @@
 #undef MBEDTLS_POLY1305_C
 
 #include "mbedtls/check_config.h"
-
-#endif // refer to AWS TLS config
-
 
 #endif /* AZURE_MBEDTLS_CONFIG_H */

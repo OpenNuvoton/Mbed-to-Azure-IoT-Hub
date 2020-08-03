@@ -5,6 +5,7 @@
     ],
     "target_overrides": {
         "*": {
+            "mbed-mqtt.max-packet-size"                 : 256,
             "platform.stdio-baud-rate"                  : 115200,
             "platform.stdio-convert-newlines"           : true,
             "mbed-trace.enable"                         : null,
