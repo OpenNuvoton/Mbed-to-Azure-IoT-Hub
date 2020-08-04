@@ -177,7 +177,7 @@ int main(int argc, char* argv[])
     printf("\r\n");
 
     // Enable button 1 for publishing a message.
-    InterruptIn btn1(BUTTON1);
+    InterruptIn btn1 = InterruptIn(MBED_CONF_APP_USER_BUTTON); //InterruptIn btn1(BUTTON1);
     btn1.rise(handleButtonRise);
 
     printf("To send a packet, push the button 1 on your board.\r\n");
