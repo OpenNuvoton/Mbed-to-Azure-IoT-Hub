@@ -27,6 +27,36 @@
             "esp8266.provide-default"               : true,
             "target.macros_add"                     : ["MBEDTLS_ENTROPY_HARDWARE_ALT"]
         },
+        "NUMAKER_IOT_M263A": {
+            "led-pin": "LED1",
+            "user-button": "PG_4",
+            "target.network-default-interface-type" : "WIFI",
+            "esp8266.tx"                            : "PC_7",
+            "esp8266.rx"                            : "PC_6",
+            "esp8266.rts"                           : "PE_13",
+            "esp8266.cts"                           : "PC_8",
+            "esp8266.rst"                           : "PE_12",
+            "esp8266.provide-default"               : true
+        },        
+        "NUMAKER_PFM_NUC472": {
+            "target.network-default-interface-type" : "ETHERNET",
+            "target.macros_add"                     : ["MBEDTLS_ENTROPY_HARDWARE_ALT"]
+        },
+        "NU_PFM_M2351_NPSA_NS": {
+            "target.network-default-interface-type" : "WIFI",
+            "esp8266.tx"                            : "PD_1",
+            "esp8266.rx"                            : "PD_0",
+            "esp8266.rts"                           : "PD_3",
+            "esp8266.cts"                           : "PD_2",
+            "esp8266.rst"                           : "NC",
+            "esp8266.pwr"                           : "PD_7",
+            "esp8266.provide-default"               : true,
+            "target.extra_labels_remove"            : ["NU_PREBUILD_SECURE"],
+            "target.mbed_rom_start"                 : "0x10010000",
+            "target.mbed_rom_size"                  : "0x70000",
+            "target.mbed_ram_start"                 : "0x30002000",
+            "target.mbed_ram_size"                  : "0x16000"
+        },
         "RZ_A1H": {
             "target.macros_add"                         : ["MBEDTLS_TEST_NULL_ENTROPY", "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"],
             "target.network-default-interface-type"     : "ETHERNET"
